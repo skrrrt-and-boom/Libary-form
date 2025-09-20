@@ -1,117 +1,73 @@
-:root{
-  --main: black;
-  --two: white;
-  --remove: #940a0a;
+:root {
+  --primary-color: #000000;
 }
 
 body {
-  margin: 0;
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr 4fr;
+  text-align: center;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 3px 1px 6px var(--main);
-}
-
-#button {
-  position: relative;
-  left: 100px;
-  cursor: pointer;
-  padding: 10px;
-  border: 3px solid var(--main);
-  border-radius: 10px;
-  box-shadow: 2px 3px 3px var(--main);
-}
-
-#button:hover {
-  transition: 0.1s ease;
-  background-color: var(--main);
-  color: var(--two);
-}
-
-#button:active {
-  transform: translateY(3px);
-}
-
-.main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-  padding: 10px;
-  gap: 10px;
-}
-
-.cont {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#window {
-  position: absolute;
-  bottom: 200px;
-  right: 45vw;
-  padding: 20px;
-  background-color: var(--two);
-  box-shadow: 3px 5px 7px var(--main);
-  border-radius: 7px;
+h1 {
+  color: var(--primary-color);
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-#submitButton {
-  background-color: unset;
-  cursor: pointer;
-  padding: 7px;
-  border: 3px solid var(--main);
-  border-radius: 10px;
-  box-shadow: 2px 3px 3px var(--main);
-}
-
-#submitButton:hover {
-  transition: 0.1s ease;
-  background-color: var(--main);
-  color: var(--two);
-}
-
-#submitButton:active {
-  transform: translateY(3px);
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  border-radius: 7px;
-  border: 3px double var(--main);
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.remove-book-button {
-    background-color: unset;
-    cursor: pointer;
-    padding: 7px;
-    border: 3px solid var(--main);
-    border-radius: 10px;
-    box-shadow: 2px 3px 3px var(--main);
+input, select {
+  padding: 8px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
 }
 
-.remove-book-button:hover {
-  transition: 0.1s ease;
-  background-color: var(--main);
-  color: var(--two);
-  box-shadow: 0px 2px 10px var(--remove);
+/* Input border black on focus */
+input:focus {
+  outline: none;                 /* remove default browser outline */
+  border: 2px solid var(--primary-color);       /* thicker black border */
 }
 
-.remove-book-button:active {
-  transform: translateY(3px);
+/* Checkbox black when checked */
+input[type="checkbox"]:checked {
+  accent-color: var(--primary-color);           /* modern browsers support accent-color */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.remove {
+  margin-top: 10px;
+  padding: 7px 10px;
+}
+
+.shelf {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  border: 2px solid black;
+  padding: 1rem;
+}
+
+.shelf legend {
+  font-weight: bold;
+  padding: 0 0.5rem; /* space around text so border doesn’t overlap */
+  text-align: left;
+}
+
+.book {
+  border: 1px solid var(--primary-color);
+  padding: 10px;
+  width: 150px;
+  text-align: left;
+  position: relative;
 }
